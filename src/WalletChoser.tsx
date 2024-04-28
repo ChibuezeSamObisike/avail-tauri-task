@@ -1,12 +1,14 @@
+import React, { FC } from "react";
+
 import { Box } from "@mui/material";
+
 import availLogo from "./assets/avail-logo.svg";
 import AvatarDropDown from "./components/AvatarDropDown";
-import React, { FC } from "react";
 import SwipeableEdgeDrawer from "./components/SwipeableDrawer";
 
 const WalletChoser: FC = () => {
-  const [open, setOpen] = React.useState(false);
-  const toggleDrawer = (newOpen: boolean) => () => {
+  const [open, setOpen] = React.useState<boolean>(false);
+  const toggleDrawer = (newOpen: boolean) => (): void => {
     setOpen(newOpen);
   };
 
@@ -19,7 +21,11 @@ const WalletChoser: FC = () => {
       sx={{ width: "100vw", m: 0, bgcolor: "#111111", p: 4 }}
     >
       <AvatarDropDown onClick={toggleDrawer(true)} />
-      <img src={availLogo} alt='avail-logo' style={{ paddingTop: "150px" }} />
+      <img
+        src={availLogo}
+        alt='avail-logo'
+        style={{ paddingTop: "150px", width: "100%" }}
+      />
       <SwipeableEdgeDrawer open={open} toggleDrawer={toggleDrawer} />
     </Box>
   );

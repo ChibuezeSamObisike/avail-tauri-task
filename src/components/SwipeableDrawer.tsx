@@ -39,9 +39,9 @@ export default function SwipeableEdgeDrawer(props: Props) {
           },
         }}
       />
-      <Box sx={{ textAlign: "center", pt: 1 }}>
+      {/* <Box sx={{ textAlign: "center", pt: 1 }}>
         <Button onClick={() => navigate("/")}>Baxk</Button>
-      </Box>
+      </Box> */}
       {open && (
         <SwipeableDrawer
           container={container}

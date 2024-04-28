@@ -37,3 +37,15 @@ cd my-tauri-app
 npm install
 npm run tauri dev
 ```
+
+3. I installed the tauri cli
+
+```
+https://beta.tauri.app/references/cli/
+```
+
+I ran
+
+```
+npm run tauri ios dev
+```
