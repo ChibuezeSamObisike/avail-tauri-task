@@ -4,15 +4,13 @@ import ReactDOM from "react-dom/client";
 import "./styles.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
-import { MobCarousel } from "./views-mobile/Mob";
-import App from "./App";
+import Mob, { MobCarousel } from "./views-mobile/Mob";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <div style={{ height: "100vh" }}>
-        {/* <MobCarousel /> */}
-        <App/>
+        <MobCarousel />
       </div>
     </ThemeProvider>
   </React.StrictMode>

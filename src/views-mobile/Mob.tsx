@@ -67,6 +67,7 @@ export const MobCarousel = () => {
           infinite={false}
           mobileTouch={true}
           interval={4000}
+          fillParent={true}
         >
           {carouselData.map((item) => (
             <div key={item.title} style={{ height: "100vh" }}>
