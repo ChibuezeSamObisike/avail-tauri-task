@@ -10,8 +10,10 @@ import "react-awesome-slider/dist/styles.css";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 // import Home from "../Home";
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider, { Infinity: false });
+
 
 interface IProps {
   title: string;
@@ -43,7 +45,7 @@ const Mob: FC<IProps> = ({ title, img }) => {
 
 export const MobCarousel = () => {
   const carouselData = [
-    { title: "Connect to the Al0 Blockchain", img: connectWallet },
+    { title: "Connect to the Aleo Blockchain", img: connectWallet },
     {
       title: "Own NFTs in private for the first time",
       img: ownNft,
@@ -102,7 +104,7 @@ export const MobCarousel = () => {
             sx={{ mt: 3 }}
             fullWidth
             variant="outlined"
-            // onClick={(): void => navigate("/existing-user-checker-screen")}
+            // onClick={(): void => navigate("/existing-user-checker-screen")} 
           >
             Add an existing wallet
           </Button>
