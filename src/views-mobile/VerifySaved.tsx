@@ -1,4 +1,4 @@
-import { Box, Button, SwipeableDrawer, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import SwipeableEdgeDrawer from "../components/SwipeableDrawer";
 
 const VerifySaved = () => {
