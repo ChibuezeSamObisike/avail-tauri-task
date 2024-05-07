@@ -18,7 +18,12 @@ const WalletChoser: FC = () => {
       display='flex'
       flexDirection='column'
       justifyContent='space-between'
-      sx={{ width: "100vw", m: 0, bgcolor: "#111111", p: 4 }}
+      sx={{
+        //width: "100vw",
+        m: 0,
+        bgcolor: "#111111",
+        p: 4,
+      }}
     >
       <AvatarDropDown onClick={toggleDrawer(true)} />
       <img

@@ -1,5 +1,7 @@
 import { ContentCopy } from "@mui/icons-material";
 import { Box, Button, IconButton, Typography } from "@mui/material";
+import React from "react";
+import SwipeableEdgeDrawer from "../components/SwipeableDrawer";
 
 const SecretRecovery = () => {
   const recoveryPhase = [
@@ -16,6 +18,12 @@ const SecretRecovery = () => {
     "Frontline",
     "Cold",
   ];
+
+  const [open, setOpen] = React.useState<boolean>(true);
+  const toggleDrawer = (newOpen: boolean) => (): void => {
+    setOpen(newOpen);
+  };
+
   return (
     <Box
       pt={16}
@@ -80,6 +88,37 @@ const SecretRecovery = () => {
           <ContentCopy sx={{ color: "#00FFAA" }} />
         </IconButton>
       </Box>
+
+      <SwipeableEdgeDrawer open={open} toggleDrawer={() => toggleDrawer(true)}>
+        <Box>
+          <Box
+            bgcolor='#00FFAA'
+            width='70%'
+            mx='auto'
+            textAlign='center'
+            borderRadius='14px'
+          >
+            <Typography fontSize='40px' fontWeight={700}>
+              Caution
+            </Typography>
+          </Box>
+
+          <Typography
+            color='#fff'
+            textAlign='center'
+            fontSize='25px'
+            fontWeight={700}
+            mt={6}
+          >
+            Screenshots aren’t safe
+          </Typography>
+
+          <Typography textAlign='center' color='#A7A7A7' lineHeight='20.88px'>
+            If someone gains access to your photos, they can access your
+            wallet...
+          </Typography>
+        </Box>
+      </SwipeableEdgeDrawer>
     </Box>
   );
 };

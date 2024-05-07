@@ -8,8 +8,6 @@ import { Button, Box, Typography, SwipeableDrawer } from "@mui/material";
 import ViewProfile from "./ViewProfile";
 
 import settingsIcon from "../assets/settings-icon.svg";
-
-import { useNavigate } from "react-router-dom";
 import { Puller, Root, StyledBox } from "./styled";
 
 const drawerBleeding = 26;
@@ -18,12 +16,43 @@ interface Props {
   window?: () => Window;
   open: boolean;
   toggleDrawer: (newOpen: boolean) => React.ReactEventHandler<{}>;
+  children?: React.ReactNode;
 }
 
 export default function SwipeableEdgeDrawer(props: Props) {
-  const { window, open, toggleDrawer } = props;
-
-  const navigate = useNavigate();
+  const {
+    window,
+    open,
+    toggleDrawer,
+    children = (
+      <Box>
+        <Typography color='#fff' fontSize='20px' fontWeight={700}>
+          Wallets
+        </Typography>
+        <Typography color='#B0B0B0' my={2}>
+          WALLET 1
+        </Typography>
+        <ViewProfile />
+        <Box mx='auto' width='90%' my={2}>
+          <Button
+            fullWidth
+            endIcon={<img src={settingsIcon} />}
+            sx={{
+              borderRadius: "20px",
+              mx: "auto",
+              bgcolor: "#2A3331",
+              border: "0px",
+              color: "#fff",
+              fontWeight: 700,
+              fontSize: "15px",
+            }}
+          >
+            Add & manage wallets
+          </Button>
+        </Box>
+      </Box>
+    ),
+  } = props;
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -37,11 +66,12 @@ export default function SwipeableEdgeDrawer(props: Props) {
             height: `calc(50% - ${drawerBleeding}px)`,
             overflow: "visible",
           },
+          ".MuiDrawer-root > .MuiBackdrop-root": {
+            backdropFilter: "blur(3px)",
+          },
         }}
       />
-      {/* <Box sx={{ textAlign: "center", pt: 1 }}>
-        <Button onClick={() => navigate("/")}>Baxk</Button>
-      </Box> */}
+
       {open && (
         <SwipeableDrawer
           container={container}
@@ -53,6 +83,12 @@ export default function SwipeableEdgeDrawer(props: Props) {
           disableSwipeToOpen={false}
           ModalProps={{
             keepMounted: false,
+          }}
+          sx={{
+            ".MuiDrawer-paper ": {
+              height: "calc(100% - 404px)",
+              top: 404,
+            },
           }}
         >
           <StyledBox
@@ -82,38 +118,14 @@ export default function SwipeableEdgeDrawer(props: Props) {
                 borderTopLeftRadius: 20,
                 borderTopRightRadius: 20,
                 p: 3,
-                boxShadow: "0px 4px 4px 0px #00FFAA40 inset",
+                //boxShadow: "0px 4px 4px 0px #00FFAA40 inset",
                 bgcolor: "#1E1E1E",
               }}
               width='100%'
               height='100%'
+              overflow='auto'
             >
-              <Box>
-                <Typography color='#fff' fontSize='20px' fontWeight={700}>
-                  Wallets
-                </Typography>
-                <Typography color='#B0B0B0' my={2}>
-                  WALLET 1
-                </Typography>
-                <ViewProfile />
-                <Box mx='auto' width='90%' my={2}>
-                  <Button
-                    fullWidth
-                    endIcon={<img src={settingsIcon} />}
-                    sx={{
-                      borderRadius: "20px",
-                      mx: "auto",
-                      bgcolor: "#2A3331",
-                      border: "0px",
-                      color: "#fff",
-                      fontWeight: 700,
-                      fontSize: "15px",
-                    }}
-                  >
-                    Add & manage wallets
-                  </Button>
-                </Box>
-              </Box>
+              {children}
             </Box>
           </StyledBox>
         </SwipeableDrawer>
