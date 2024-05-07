@@ -5,13 +5,14 @@ import "./styles.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
 import { MobCarousel } from "./views-mobile/Mob";
-import Existing from "./views-mobile/Existing";
+import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <div style={{ height: "100vh" }}>
-        <Existing/>
+        {/* <MobCarousel /> */}
+        <App/>
       </div>
     </ThemeProvider>
   </React.StrictMode>
