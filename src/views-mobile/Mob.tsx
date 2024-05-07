@@ -45,7 +45,7 @@ const Mob: FC<IProps> = ({ title, img }) => {
 
 export const MobCarousel = () => {
   const carouselData = [
-    { title: "Connect to the Aleo Blockchain", img: connectWallet },
+    { title: "Connect to the Al0 Blockchain", img: connectWallet },
     {
       title: "Own NFTs in private for the first time",
       img: ownNft,

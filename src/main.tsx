@@ -9,7 +9,7 @@ import VerifySaved from "./views-mobile/VerifySaved";
 import BackupWallet from "./views-mobile/BackupWallet";
 import SecretRecovery from "./views-mobile/SecretRecovery";
 import { MobCarousel } from "./views-mobile/Mob";
-import Existing from "./views-mobile/Existing";
+import App from "./App";
 import Home from "./Home";
 import WalletChoser from "./WalletChoser";
 import DataPointers from "./views-mobile/DataPointers";

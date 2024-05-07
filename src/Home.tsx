@@ -7,12 +7,12 @@ import { Box, Button, Typography } from "@mui/material";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
 const Home: FC = () => {
-  // const navigate: NavigateFunction = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
-  // const handleNavigation = () => {
-  //   navigate("/existing-user-checker-screen");
-  //   console.log("INFO: going to the existing user check screen")
-  // };
+  const handleNavigation = () => {
+    navigate("/existing-user-checker-screen");
+    console.log("INFO: going to the existing user check screen")
+  };
 
   return (
     <Box
@@ -42,7 +42,7 @@ const Home: FC = () => {
           sx={{ mt: 3 }}
           fullWidth
           variant="outlined"
-          // onClick={handleNavigation}
+          onClick={handleNavigation}
         >
           Add an existing wallet
         </Button>
