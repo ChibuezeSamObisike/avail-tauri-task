@@ -90,13 +90,15 @@ const SecretRecovery = () => {
       </Box>
 
       <SwipeableEdgeDrawer open={open} toggleDrawer={() => toggleDrawer(true)}>
-        <Box>
+        <Box position='relative'>
           <Box
             bgcolor='#00FFAA'
             width='70%'
             mx='auto'
             textAlign='center'
             borderRadius='14px'
+            mt={6}
+            boxShadow='0 0 15px #00FFAA'
           >
             <Typography fontSize='40px' fontWeight={700}>
               Caution
@@ -113,10 +115,26 @@ const SecretRecovery = () => {
             Screenshots aren’t safe
           </Typography>
 
-          <Typography textAlign='center' color='#A7A7A7' lineHeight='20.88px'>
+          <Typography
+            textAlign='center'
+            fontSize='18px'
+            color='#A7A7A7'
+            lineHeight='20.88px'
+          >
             If someone gains access to your photos, they can access your
             wallet...
           </Typography>
+
+          <Box
+            sx={{
+              mx: "auto",
+              display: "flex",
+              alignItems: "center",
+            }}
+            mt={10}
+          >
+            <Button sx={{ mx: "auto", fontSize: "20px" }}>Continue</Button>
+          </Box>
         </Box>
       </SwipeableEdgeDrawer>
     </Box>
