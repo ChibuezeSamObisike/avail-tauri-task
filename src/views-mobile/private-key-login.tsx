@@ -15,6 +15,7 @@ function PrivateKeyLogin() {
       height="100vh"
       sx={{
         backgroundSize: "cover",
+        backgroundColor: "#000000",
       }}
     >
       {/* Arrow back icon */}
@@ -71,7 +72,7 @@ function PrivateKeyLogin() {
         <mui.Button
           variant="contained"
           size="large"
-          onClick={() => navigate("/next-page")}
+          onClick={() => {}}
           sx={{
             fontSize: "20px",
             padding: "12px 140px",

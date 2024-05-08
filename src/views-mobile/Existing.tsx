@@ -17,6 +17,7 @@ function Existing() {
         justifyContent: "center",
         alignItems: "center",
         backgroundSize: "cover",
+        backgroundColor: "#000000"
       }}
     >
       {/* Arrow back icon */}

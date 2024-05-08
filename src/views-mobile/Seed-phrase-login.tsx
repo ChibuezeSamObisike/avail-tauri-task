@@ -2,20 +2,19 @@ import * as mui from "@mui/material";
 import { ArrowBackIos } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
+import WalletInput from "../components/wallet_address_form";
 
 function SeedLogin() {
   const navigate = useNavigate();
   return (
-    <mui.Box
-      className="Box"
+    <mui.Grid
+      container
+      justifyContent="center"
+      alignItems="center"
       height="100vh"
-      position="relative"
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
         backgroundSize: "cover",
+        backgroundColor: "#000000",
       }}
     >
       {/* Arrow back icon */}
@@ -39,15 +38,53 @@ function SeedLogin() {
       >
         <ArrowBackIos />
       </mui.IconButton>
-      <mui.Typography mt={10} fontSize={25}  fontWeight={"bold"} sx={{ color: "#fff" }}>
-        Input your
-        <span style={{ color: "#01f0a0" }}> Seed Phrase</span>
-      </mui.Typography>
-      <mui.Typography fontSize={18} fontWeight={"regular"} sx={{ color: "#9d9d9d" }}>
-        You have been missed
-      </mui.Typography>
-      Hello This is the Seed Login Page
-    </mui.Box>
+
+      <mui.Box
+        position="relative"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        {/*The Text in Column */}
+        <mui.Typography
+          mt={10}
+          fontSize={25}
+          fontWeight={"bold"}
+          sx={{ color: "#fff" }}
+        >
+          Input your
+          <span style={{ color: "#01f0a0" }}> Seed Phrase</span>
+        </mui.Typography>
+        <mui.Typography
+          fontSize={18}
+          fontWeight={"regular"}
+          sx={{ color: "#9d9d9d" }}
+        >
+          You have been missed
+        </mui.Typography>
+      </mui.Box>
+
+      <WalletInput />
+
+      {/* The Next button */}
+      <mui.Grid item xs={12} textAlign="center" mt={10}>
+        <mui.Button
+          variant="contained"
+          size="large"
+          onClick={() => {}}
+          sx={{
+            fontSize: "20px",
+            padding: "12px 140px",
+            background:
+              "linear-gradient(89.89deg, #3E3E3E -27.59%, rgba(62, 62, 62, 0) 42.72%), #00FFAA",
+          }}
+        >
+          Next
+        </mui.Button>
+      </mui.Grid>
+    </mui.Grid>
   );
 }
 
