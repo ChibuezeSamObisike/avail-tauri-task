@@ -1,8 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
 
 import img from "../assets/data-pointers.png";
+import SwipeableEdgeDrawer from "../components/SwipeableDrawer";
+import React from "react";
 
 const DataPointers = () => {
+  const [open, setOpen] = React.useState<boolean>(true);
+  const toggleDrawer = (newOpen: boolean) => (): void => {
+    setOpen(newOpen);
+  };
   return (
     <Box
       height='100vh'
@@ -66,6 +72,31 @@ const DataPointers = () => {
           Don't Backup
         </Button>
       </Box>
+
+      <SwipeableEdgeDrawer toggleDrawer={() => toggleDrawer(true)} open={open}>
+        <Typography
+          textAlign='center'
+          fontSize='25px'
+          fontWeight={700}
+          color='#fff'
+        >
+          Backup or not?
+        </Typography>
+        <Typography color='#D8D4D4' textAlign='center' mt={4}>
+          If you choose to backup, the pointers will be encrypted with your
+          viewing key and stored on our database system. When you recover your
+          Avail wallet like this you instantly get access to all your record and
+          past transaction history.
+        </Typography>
+
+        <Button
+          sx={{ mt: 3, bgcolor: "#3E3E3E", color: "#fff", border: "0px" }}
+          fullWidth
+          //   variant='outlined'
+        >
+          Back
+        </Button>
+      </SwipeableEdgeDrawer>
     </Box>
   );
 };
