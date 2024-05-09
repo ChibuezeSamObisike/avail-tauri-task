@@ -12,8 +12,9 @@ import withAutoplay from "react-awesome-slider/dist/autoplay";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AutoplaySlider = withAutoplay(AwesomeSlider, { Infinity: false });
+const navigate = useNavigate();
 
+const AutoplaySlider = withAutoplay(AwesomeSlider, { Infinity: false });
 
 interface IProps {
   title: string;
@@ -104,7 +105,7 @@ export const MobCarousel = () => {
             sx={{ mt: 3 }}
             fullWidth
             variant="outlined"
-            // onClick={(): void => navigate("/existing-user-checker-screen")} 
+            onClick={(): void => navigate("/existing-user-checker-screen")}
           >
             Add an existing wallet
           </Button>
