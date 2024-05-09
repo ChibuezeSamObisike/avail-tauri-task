@@ -14,12 +14,13 @@ import WalletChoser from "./WalletChoser";
 import DataPointers from "./views-mobile/DataPointers";
 import MoreProtection from "./views-mobile/MoreProtection";
 import DashboardLayout from "./layouts/DashboardLayout";
+import Dashboard from "./views-mobile/Dashboard";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <div style={{ height: "100vh", backgroundColor: "red" }}>
-        <DashboardLayout />
+        <Dashboard />
       </div>
     </ThemeProvider>
   </React.StrictMode>
