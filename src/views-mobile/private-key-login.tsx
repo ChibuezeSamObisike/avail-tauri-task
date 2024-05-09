@@ -2,7 +2,7 @@ import * as mui from "@mui/material";
 import { ArrowBackIos } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
-import PasswordTextField from "../components/text-form-field";
+import AvailTextField from "../components/text-form-field";
 
 function PrivateKeyLogin() {
   const navigate = useNavigate();
@@ -64,7 +64,7 @@ function PrivateKeyLogin() {
 
       {/* The Text Field and eye outline icon */}
       <mui.Grid item xs={12} textAlign="center" mt={-20}>
-        <PasswordTextField />
+        <AvailTextField isPassword={true} />
       </mui.Grid>
 
       {/* The Next button */}
@@ -72,7 +72,7 @@ function PrivateKeyLogin() {
         <mui.Button
           variant="contained"
           size="large"
-          onClick={() => {}}
+          onClick={() => navigate("/username-select-screen")}
           sx={{
             fontSize: "20px",
             padding: "12px 140px",

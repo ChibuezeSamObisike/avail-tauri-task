@@ -14,7 +14,6 @@ const WalletInput: React.FC = () => {
     <Grid container spacing={2} justifyContent="center">
       <Grid item xs={6} container justifyContent="center">
         {[...Array(6)].map((_, index) => {
-          const rowIndex = index;
           return (
             <Grid item key={index}>
               <TextField

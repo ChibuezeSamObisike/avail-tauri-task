@@ -1,13 +1,17 @@
 import * as mui from "@mui/material";
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { useState } from 'react';
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { useState } from "react";
 
-function PasswordTextField() {
+interface PasswordTextFieldProps {
+  isPassword: boolean;
+}
+
+function AvailTextField({ isPassword }: PasswordTextFieldProps) {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
-    setShowPassword(prevState => !prevState);
+    setShowPassword((prevState) => !prevState);
   };
 
   return (
@@ -17,14 +21,25 @@ function PasswordTextField() {
       sx={{
         flexDirection: "column",
         alignItems: "center",
-        position: "relative" // Needed for absolute positioning of the icon
+        position: "relative", // Needed for absolute positioning of the icon
       }}
     >
       {/* The Text Field */}
       <mui.TextField
         fullWidth
         variant="filled"
-        label="Private Key"
+        label={
+          isPassword ? (
+            "Private Key"
+          ) : (
+            <>
+              username{""}
+              <span style={{ fontWeight: "bold", color: "#FFFFFF" }}>
+                .avl.alo
+              </span>
+            </>
+          )
+        }
         id="outlined-basic"
         color="primary"
         sx={{
@@ -38,34 +53,41 @@ function PasswordTextField() {
             padding: "5px",
             border: "2px solid #01f0a0", // Set border for both states
           },
-          type: showPassword ? 'text' : 'password', // Toggle password visibility
+          type: isPassword && showPassword ? "text" : "password", // Toggle password visibility if isPassword is true
         }}
         InputLabelProps={{
           sx: {
             fontSize: "2rem",
             color: "#9d9d9d",
-            padding: "5px 100px",
+            justifyContent: "center",
+            padding: isPassword ? "5px 100px" : "1px 60px",
           },
         }}
       />
-      
-      {/* Eye Icon */}
-      <mui.IconButton
-        style={{
-          position: "absolute",
-          bottom: 0,
-          right: 10,
-          backgroundColor: "#01f0a0", // Set background color
-          borderRadius: "50%",
-          width: "40px", 
-          height: "40px",
-        }}
-        onClick={togglePasswordVisibility}
-      >
-        {showPassword ? <VisibilityOffIcon sx={{ color: "black" }} /> : <VisibilityIcon sx={{ color: "black" }} />}
-      </mui.IconButton>
+
+      {/* Optional Eye Icon */}
+      {isPassword && (
+        <mui.IconButton
+          style={{
+            position: "absolute",
+            bottom: 0,
+            right: 10,
+            backgroundColor: "#01f0a0", // Set background color
+            borderRadius: "50%",
+            width: "40px",
+            height: "40px",
+          }}
+          onClick={togglePasswordVisibility}
+        >
+          {showPassword ? (
+            <VisibilityOffIcon sx={{ color: "black" }} />
+          ) : (
+            <VisibilityIcon sx={{ color: "black" }} />
+          )}
+        </mui.IconButton>
+      )}
     </mui.Box>
   );
 }
 
-export default PasswordTextField;
+export default AvailTextField;
