@@ -17,7 +17,7 @@ const Dashboard = () => {
     { icon: receiveIcon },
   ];
   const assetData = [
-    { image_ref: availLogo, symbol: "Avail", total: 140, value: 50 },
+    { image_ref: availLogo, symbol: "Avail", total: 140, value: 0.05 },
   ];
   return (
     <DashboardLayout>

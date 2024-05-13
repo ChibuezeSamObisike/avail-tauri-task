@@ -29,7 +29,7 @@ const AssestCard: FC<IProps> = ({ image_ref, symbol, total, value }) => {
       </Box>
       <Box textAlign='left'>
         <Typography fontSize='17px' fontWeight={500}>
-          ${value}
+          ${value * total}
         </Typography>
       </Box>
     </Box>
