@@ -23,14 +23,13 @@ const AssestCard: FC<IProps> = ({ image_ref, symbol, total, value }) => {
             {symbol}
           </Typography>
           <Typography fontSize='10px' fontWeight={400}>
-            {value} {symbol}
+            {total} {symbol}
           </Typography>
         </Box>
       </Box>
-      {/* <img src={lineChart} /> */}
       <Box textAlign='left'>
         <Typography fontSize='17px' fontWeight={500}>
-          ${total}
+          ${value}
         </Typography>
       </Box>
     </Box>
