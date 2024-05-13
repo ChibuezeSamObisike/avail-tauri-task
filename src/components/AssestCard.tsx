@@ -1,8 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import availLogo from "../assets/avail-icon.svg";
 import lineChart from "../assets/line-chart.svg";
+import { FC } from "react";
+import { AssetType } from "../types/assets/asset";
 
-const AssestCard = () => {
+const AssestCard: FC<AssetType> = () => {
   return (
     <Box
       color='#fff'
@@ -25,13 +27,10 @@ const AssestCard = () => {
           </Typography>
         </Box>
       </Box>
-      <img src={lineChart} />
+      {/* <img src={lineChart} /> */}
       <Box textAlign='left'>
         <Typography fontSize='17px' fontWeight={500}>
           $4.7M
-        </Typography>
-        <Typography fontWeight={400} color='#01FFAB' fontSize='10px'>
-          +15.2%
         </Typography>
       </Box>
     </Box>

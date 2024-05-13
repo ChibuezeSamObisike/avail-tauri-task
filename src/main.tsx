@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App";
 import "./styles.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
@@ -15,13 +14,12 @@ import DataPointers from "./views-mobile/DataPointers";
 import MoreProtection from "./views-mobile/MoreProtection";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./views-mobile/Dashboard";
+import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <div style={{ height: "100vh", backgroundColor: "red" }}>
-        <Dashboard />
-      </div>
-    </ThemeProvider>
-  </React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <React.StrictMode>
+      <Dashboard />
+    </React.StrictMode>
+  </ThemeProvider>
 );

@@ -1,6 +1,6 @@
 import { Theme, createTheme } from "@mui/material";
 
-const theme: Theme = createTheme({
+const theme = createTheme({
   typography: {
     fontFamily: "DM Sans",
   },
