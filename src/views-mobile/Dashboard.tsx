@@ -7,12 +7,17 @@ import diamondShinyIcon from "../assets/diamond-shiny-icon.svg";
 import sendIcon from "../assets/send-icon.svg";
 import receiveIcon from "../assets/receive-icon.svg";
 
+import availLogo from "../assets/avail-icon.svg";
+
 const Dashboard = () => {
   const DASHBOARD_ITEMS = [
     { icon: diamondShinyIcon },
     { icon: sendIcon },
     { icon: receiveIcon },
     { icon: receiveIcon },
+  ];
+  const assetData = [
+    { image_ref: availLogo, symbol: "Avail", total: 140, value: 50 },
   ];
   return (
     <DashboardLayout>
@@ -73,8 +78,8 @@ const Dashboard = () => {
         </Typography>
       </Box>
 
-      {[1, 2, 3, 4].map(() => (
-        <AssestCard />
+      {assetData.map((item) => (
+        <AssestCard {...item} />
       ))}
     </DashboardLayout>
   );

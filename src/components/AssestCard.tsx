@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import availLogo from "../assets/avail-icon.svg";
-import lineChart from "../assets/line-chart.svg";
 import { FC } from "react";
 import { AssetType } from "../types/assets/asset";
 
-const AssestCard: FC<AssetType> = () => {
+type IProps = Pick<AssetType, "image_ref" | "symbol" | "total" | "value">;
+
+const AssestCard: FC<IProps> = ({ image_ref, symbol, total, value }) => {
   return (
     <Box
       color='#fff'
@@ -17,20 +17,20 @@ const AssestCard: FC<AssetType> = () => {
       borderRadius='9px'
     >
       <Box display='flex'>
-        <img src={availLogo} />
+        <img src={image_ref} />
         <Box ml={1} textAlign='left'>
           <Typography fontWeight={700} fontSize='17px'>
-            AVAIL
+            {symbol}
           </Typography>
           <Typography fontSize='10px' fontWeight={400}>
-            0.1502 ALO
+            {value} {symbol}
           </Typography>
         </Box>
       </Box>
       {/* <img src={lineChart} /> */}
       <Box textAlign='left'>
         <Typography fontSize='17px' fontWeight={500}>
-          $4.7M
+          ${total}
         </Typography>
       </Box>
     </Box>

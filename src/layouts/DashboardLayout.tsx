@@ -28,6 +28,7 @@ const DashboardLayout: FC<IProps> = ({ children }) => {
         pt='10vh'
         height='90vh'
         px={3}
+        sx={{ overflowY: "auto" }}
       >
         {children}
       </Box>
