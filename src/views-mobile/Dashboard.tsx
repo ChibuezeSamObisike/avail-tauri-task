@@ -8,6 +8,8 @@ import sendIcon from "../assets/send-icon.svg";
 import receiveIcon from "../assets/receive-icon.svg";
 
 import availLogo from "../assets/avail-icon.svg";
+import NftDisplay from "../components/NftDisplay";
+import NftDetailsDisplay from "../components/NftDetailsDisplay";
 
 const Dashboard = () => {
   const DASHBOARD_ITEMS = [
@@ -16,9 +18,13 @@ const Dashboard = () => {
     { icon: receiveIcon },
     { icon: receiveIcon },
   ];
-  const assetData = [
-    { image_ref: availLogo, symbol: "Avail", total: 140, value: 0.05 },
+
+  const airdropNftData = [
+    { whitelist_img: availLogo, name: "Airdrop NFT 1" },
+    { whitelist_img: availLogo, name: "Airdrop NFT 2" },
+    { whitelist_img: availLogo, name: "Airdrop NFT 3" },
   ];
+
   return (
     <DashboardLayout>
       <DashboardHeader />
@@ -78,9 +84,7 @@ const Dashboard = () => {
         </Typography>
       </Box>
 
-      {assetData.map((item) => (
-        <AssestCard {...item} />
-      ))}
+      <NftDetailsDisplay />
     </DashboardLayout>
   );
 };
