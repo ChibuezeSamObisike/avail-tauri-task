@@ -20,22 +20,22 @@ const DashboardLayout: FC<IProps> = ({ children }) => {
     },
   ];
   return (
-    <Box height='100vh'>
+    <Box height="100vh">
       <Box
-        bgcolor='black'
-        textAlign='center'
-        color='#fff'
-        pt='10vh'
-        height='90vh'
+        bgcolor="#101010"
+        textAlign="center"
+        color="#fff"
+        pt="10vh"
+        height="90vh"
         px={3}
       >
         {children}
       </Box>
-      <Box height='15vh' bgcolor='#2A2A2A' px={4} position='relative'>
+      <Box height="15vh" bgcolor="#2A2A2A" px={4} position="relative">
         <Box
-          width='100%'
-          mx='auto'
-          height='2px'
+          width="100%"
+          mx="auto"
+          height="2px"
           sx={{
             background:
               "linear-gradient(90deg, rgba(0, 255, 170, 0) 0%, #00FFAA 49.35%, rgba(0, 153, 102, 0) 100%)",
@@ -43,9 +43,9 @@ const DashboardLayout: FC<IProps> = ({ children }) => {
         ></Box>
 
         <Box
-          display='flex'
-          alignItems='center'
-          justifyContent='space-between'
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
           pt={1}
           pb={2}
         >
