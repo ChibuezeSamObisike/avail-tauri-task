@@ -12,7 +12,6 @@ import NftDisplay from "../components/NftDisplay";
 import NftDetailsDisplay from "../components/NftDetailsDisplay";
 import {
   CompletedDisplay,
-  PendingCard,
   PendingDisplay,
 } from "../components/ActivityStatusCard";
 import SwipeableEdgeDrawer from "../components/SwipeableDrawer";
@@ -160,7 +159,11 @@ const Dashboard = () => {
           </>
         )}
 
-        {activeTab === "nft" && <NftDisplay />}
+        {activeTab === "nft" && (
+          <NftDisplay onClick={() => setActiveTab("nftDetails")} />
+        )}
+
+        {activeTab === "nftDetails" && <NftDetailsDisplay />}
 
         {activeTab === "assets" && (
           <>

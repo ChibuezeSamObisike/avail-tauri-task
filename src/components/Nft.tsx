@@ -4,6 +4,7 @@ import React from "react";
 type NftProperties = {
   name: string;
   image: string;
+  onClick: () => void;
 };
 
 type Collection = {
@@ -16,8 +17,9 @@ type AirdropNftProperties = {
   setCollection: (collection: Collection) => void;
 };
 
-const Nft: React.FC<NftProperties> = ({ name, image }) => (
+const Nft: React.FC<NftProperties> = ({ name, image, onClick }) => (
   <Box
+    onClick={onClick}
     sx={{
       display: "flex",
       flexDirection: "column",

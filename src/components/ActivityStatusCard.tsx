@@ -4,17 +4,14 @@ import arrowUp from "../assets/arrow-up.svg";
 import buyIcon from "../assets/buy.svg";
 import { FC } from "react";
 
-export const ActivityStatusCard = () => {
-  return <div>ActivityStatusCard</div>;
-};
-
 type IPendingCard = {
   type: "transfer" | "buy";
   title: string;
   status: string;
   amount: number;
   fee: number;
-} & Partial<IProps>;
+  onClick?: () => void;
+};
 
 export const PendingCard: FC<IPendingCard> = ({
   type = "buy",
@@ -22,11 +19,11 @@ export const PendingCard: FC<IPendingCard> = ({
   amount,
   fee,
   title,
-  onItemClick,
+  onClick,
 }) => {
   return (
     <Box
-      onClick={() => onItemClick?.()}
+      onClick={onClick}
       display='flex'
       alignItems='center'
       my={0.5}
@@ -99,7 +96,13 @@ export const PendingDisplay: FC<IProps> = ({ onItemClick }) => {
       </Typography>
       <Box borderRadius='9px' bgcolor='#2a2a2a' p={2}>
         {pendingCards.map((item, i) => (
-          <PendingCard onItemClick={() => onItemClick()} {...item} key={i} />
+          <PendingCard
+            onClick={(): void => {
+              onItemClick();
+            }}
+            {...item}
+            key={i}
+          />
         ))}
       </Box>
     </Box>

@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Nft from "./Nft";
 import availLogo from "../assets/avail-icon.svg";
 
-const NftDisplay = () => {
+const NftDisplay = ({ onClick }: { onClick: () => void }) => {
   const nftData = [
     {
       name: "NFT 1",
@@ -32,7 +32,12 @@ const NftDisplay = () => {
       </Box>
       <Box display='grid' gap={3} gridTemplateColumns='1fr 1fr'>
         {nftData.map((nft, index) => (
-          <Nft key={index} name={nft.name} image={nft.image} />
+          <Nft
+            onClick={onClick}
+            key={index}
+            name={nft.name}
+            image={nft.image}
+          />
         ))}
       </Box>
     </Box>
