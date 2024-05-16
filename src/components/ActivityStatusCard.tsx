@@ -69,10 +69,10 @@ export const PendingCard: FC<IPendingCard> = ({
 };
 
 interface IProps {
-  onItemClick: () => void;
+  onClick: () => void;
 }
 
-export const PendingDisplay: FC<IProps> = ({ onItemClick }) => {
+export const PendingDisplay: FC<IProps> = ({ onClick }) => {
   const pendingCards: IPendingCard[] = [
     {
       type: "buy",
@@ -96,13 +96,7 @@ export const PendingDisplay: FC<IProps> = ({ onItemClick }) => {
       </Typography>
       <Box borderRadius='9px' bgcolor='#2a2a2a' p={2}>
         {pendingCards.map((item, i) => (
-          <PendingCard
-            onClick={(): void => {
-              onItemClick();
-            }}
-            {...item}
-            key={i}
-          />
+          <PendingCard onClick={onClick} {...item} key={i} />
         ))}
       </Box>
     </Box>

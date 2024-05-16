@@ -151,8 +151,8 @@ const Dashboard = () => {
         {activeTab === "activity" && (
           <>
             <PendingDisplay
-              onItemClick={(): void => {
-                toggleActivityDetails(true);
+              onClick={() => {
+                setOpenActivityDetails(true);
               }}
             />
             <CompletedDisplay />
